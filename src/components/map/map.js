@@ -1,6 +1,7 @@
+/* eslint-disable no-mixed-spaces-and-tabs */
 import L from 'leaflet';
-import 'leaflet/dist/leaflet.css';
 import esri from 'esri-leaflet';
+import 'leaflet/dist/leaflet.css';
 
 class MapDirective {
 
@@ -10,11 +11,14 @@ class MapDirective {
     }
 
     link(scope, element) {
-        let map = L.map(element[0]).setView([30.70, -81.47], 12);
+
+        let map = L.map(element[0]).setView([51.505, -0.09], 8);
 
         esri.tiledMapLayer({
             url: "https://services.arcgisonline.com/ArcGIS/rest/services/USA_Topo_Maps/MapServer"
         }).addTo(map);
+        
+        
     }
 
     /**
@@ -41,3 +45,4 @@ class MapController {
 }
 
 export default MapDirective;
+/* eslint-enable no-mixed-spaces-and-tabs */
