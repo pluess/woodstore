@@ -6,7 +6,7 @@ import 'leaflet/dist/leaflet.css';
 class MapDirective {
 
     constructor() {
-        this.resctrict = 'E';
+        this.resctrict = 'EA';
         this.controller = MapController;
     }
 
