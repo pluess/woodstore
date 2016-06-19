@@ -12,10 +12,10 @@ class MapDirective {
 
     link(scope, element) {
 
-        let map = L.map(element[0]).setView([51.505, -0.09], 8);
+        let map = L.map(element[0]).setView([47.2090507,7.7752166], 16);
 
         esri.tiledMapLayer({
-            url: "https://services.arcgisonline.com/ArcGIS/rest/services/USA_Topo_Maps/MapServer"
+            url: "https://services.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer"
         }).addTo(map);
         
         

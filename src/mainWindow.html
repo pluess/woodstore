@@ -7,7 +7,22 @@
 		</div>
 
 		<div class="col-md-6">
-			<div map style="height: 300px"></div>
+			<ul class="nav nav-tabs" role="tablist">
+				<li role="presentation" class="active"><a href="#map" role="tab" data-toggle="tab">Map</a></li>
+				<li role="presentation" ><a href="#graphics" role="tab" data-toggle="tab">Graphics</a></li>
+				<li role="presentation" ><a href="#messages" role="tab" data-toggle="tab">Messages</a></li>
+			</ul>
+			<div class="tab-content">
+				<div role="tabpanel" class="tab-pane active" id="map">
+					<div map style="height: 600px"></div>
+				</div>
+				<div role="tabpanel" class="tab-pane" id="graphics">
+					My image commes here
+				</div>
+				<div role="tabpanel" class="tab-pane" id="messages">
+					My messages content
+				</div>			
+			</div>
 		</div>
 	</div>
 </div>
