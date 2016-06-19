@@ -3,7 +3,10 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-6">
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras turpis ex, fringilla a eros sit amet, cursus bibendum elit. Cras consectetur, velit sit amet vestibulum egestas, eros metus tristique ex, a aliquet libero libero ut nunc. Nam a orci iaculis, iaculis ex eu, convallis elit. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ut sodales odio, in bibendum arcu. Proin arcu mi, molestie sed dapibus pretium, vehicula sed quam. Vivamus magna est, sodales at quam nec, dapibus venenatis turpis. Integer ut orci egestas, maximus quam a, rutrum enim. Nam non libero non odio ultricies maximus vitae in lectus. Suspendisse id ultrices neque. Fusce ac purus at turpis pellentesque lobortis vel ac urna. Donec scelerisque laoreet pulvinar. Vivamus in metus hendrerit mi laoreet faucibus sit amet a ligula. Nam sit amet ante sagittis, porttitor justo ut, malesuada magna. Vestibulum scelerisque tortor sed magna imperdiet, eu venenatis risus venenatis. Fusce ultricies orci non dapibus commodo.
+			<div ng-repeat="result in $ctrl.getSearchService().getSearchResults()"
+					 ng-click="$ctrl.markActiveResult(result)">
+				{{result}}
+			</div>
 		</div>
 
 		<div class="col-md-6">
