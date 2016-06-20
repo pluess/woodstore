@@ -1,5 +1,6 @@
 /* eslint-disable no-undef */
 var webpack = require('webpack');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     devtool: 'source-map',
@@ -42,7 +43,15 @@ module.exports = {
             {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file'},
             {test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=image/svg+xml'}
         ]
-    }
+    },
+    plugins: [
+        new CopyWebpackPlugin([
+            {
+                context: 'node_modules/leaflet/dist',
+                from: 'images/*'
+            }
+        ])
+    ]
 };
 
 /* eslint-enable no-undef */

@@ -8,6 +8,8 @@ class MapDirective {
 	constructor() {
 		this.resctrict = 'EA';
 		this.controller = MapController;
+        
+        L.Icon.Default.imagePath = '/images';
 	}
 
 	link(scope, element, attr, ctrl) {
