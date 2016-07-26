@@ -3,10 +3,25 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col-md-6">
-			<div ng-repeat="result in $ctrl.getSearchService().getSearchResults()"
-					 ng-click="$ctrl.markActiveResult(result)">
-				{{result}}
+			<ul class="nav nav-tabs" role="tablist">
+				<li role="presentation" class="active"><a href="#coordinates" role="tab" data-toggle="tab">Coordiantes</a></li>
+				<li role="presentation" ><a href="#confirmDialog" role="tab" data-toggle="tab">Confirm Dialog</a></li>
+				<li role="presentation" ><a href="#errorHanddler" role="tab" data-toggle="tab">Error Handler</a></li>
+			</ul>
+			<div class="tab-content">
+				<div role="tabpanel" class="tab-pane active" id="coordinates">
+                    <div ng-repeat="result in $ctrl.getSearchService().getSearchResults()"
+                             ng-click="$ctrl.markActiveResult(result)">
+                        {{result}}
+                    </div>				</div>
+				<div role="tabpanel" class="tab-pane" id="confirmDialog">
+					<confirm-dialog></confirm-dialog>
+				</div>
+				<div role="tabpanel" class="tab-pane" id="errorHandler">
+					Error Handler Content
+				</div>			
 			</div>
+
 		</div>
 
 		<div class="col-md-6">
