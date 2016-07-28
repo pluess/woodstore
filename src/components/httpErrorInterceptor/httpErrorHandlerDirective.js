@@ -6,7 +6,7 @@ class HttpErrorHandlerDirective {
         this._log = $log;
         
         this.restrict = 'A';
-        this.controllerAs = '$ctrl';
+        this.controllerAs = '$errorHandlerCtrl';
         this.bindToController = true;
         this.controller = HttpErrorHandlerController;
         
