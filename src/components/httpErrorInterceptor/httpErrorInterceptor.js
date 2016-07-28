@@ -1,9 +1,13 @@
+
 let that = null;
 
 class HttpErrorInterceptor {
     
-    constructor($log) {
+    constructor($log, $q, httpErrorService) {
         this._log = $log;
+        this._q = $q;
+        this._httpErrorService = httpErrorService;
+        
         that = this;
         this._log.debug('Interceptor created');
     }
@@ -17,11 +21,15 @@ class HttpErrorInterceptor {
     responseError(rejection) {
         that._log.debug('HttpErrorInterceptor.responseError');
         that._log.debug(rejection);
+        
+        that._httpErrorService.httpStatusCode = rejection.status;
+                
+        return that._q.reject(rejection);
     }
     
     /*@ngInject*/
-    static factory($log) {
-        return new HttpErrorInterceptor($log);
+    static factory($log, $q, httpErrorService) {
+        return new HttpErrorInterceptor($log, $q, httpErrorService);
     }
 }
 

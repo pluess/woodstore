@@ -7,13 +7,13 @@ class HttpErrorInterceptorPanelController {
 	}
     
     issueGetRequest() {
-        this._log.debug('MainWindowController.issueGetRequest');
+        this._log.debug('HttpErrorInterceptorPanelController.issueGetRequest');
         this._http.get('http://localhost:3000')
             .then(() => {
                 this._log.debug("success");
             },
             () => {
-            this._log.debug("failed");
+                this._log.debug("failed");
         });
     }
 }

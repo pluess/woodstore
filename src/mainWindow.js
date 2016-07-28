@@ -8,7 +8,8 @@ import htmlTemplate from './mainWindow.html';
 import './mainWindow.css';
 import MapDirective from './components/map/map';
 import SearchService from './components/search/searchService';
-
+import HttpErrorService from './components/httpErrorInterceptor/httpErrorService';
+import HttpErrorHandlerDirective from './components/httpErrorInterceptor/httpErrorHandlerDirective';
 
 const moduleName = 'woodstore';
 
@@ -44,4 +45,6 @@ angular.module(moduleName, ['ui.bootstrap', 'angular-confirm'])
     }])
     .factory('httpErrorInterceptor', HttpErrorInterceptor.factory)
 	.directive('map', MapDirective.directiveFactory)
+    .directive('httpErrorHandler', HttpErrorHandlerDirective.directiveFactory)
+    .service('httpErrorService', HttpErrorService)
 	.service('searchService', SearchService);
